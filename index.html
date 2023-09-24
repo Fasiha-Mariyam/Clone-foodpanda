@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FoodPanda_Clone</title>
+    <link rel="shortcut icon" href="https://micro-assets.foodora.com/favicons/fp/favicon-16x16.png" type="image/x-icon">   
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- NavBar -->
+    <nav class="navbar navbar-expand-lg bg-body-white shadow p-3 bg-white py-2 sticky-top">
+        <div class="container-fluid ms-5">
+            <a class="navbar-brand"><img width="130px" height="25" src="./Images/logo.png" alt=""></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNavDropdown">
+                <ul class="navbar-nav justify-content-end">
+                    <li class="nav-item ms-2">
+                        <a class="nav-link active" aria-current="page" href="form.html"><button class="login">Log in</button></a>
+                    </li>
+                    <li class="nav-item ms-1">
+                        <a class="nav-link" href="form.html"><button class="signup">Sign up</button></a>
+                    </li>
+                    <li class="nav-item dropdown ms-2 fw-bold mt-1">
+                        <a class="nav-link dropdown-toggle" id="dropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" fill="currentColor" height="30" class="bi bi-globe2 globe" viewBox="0 0 16 16">
+                                <path d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"/>
+                            </svg> EN
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="#">English &nbsp;<svg xmlns="http://www.w3.org/2000/svg" height="1em" viewBox="0 0 512 512"><style>svg{fill:#e21b70}</style><path d="M256 48a208 208 0 1 1 0 416 208 208 0 1 1 0-416zm0 464A256 256 0 1 0 256 0a256 256 0 1 0 0 512zM369 209c9.4-9.4 9.4-24.6 0-33.9s-24.6-9.4-33.9 0l-111 111-47-47c-9.4-9.4-24.6-9.4-33.9 0s-9.4 24.6 0 33.9l64 64c9.4 9.4 24.6 9.4 33.9 0L369 209z"/></svg></a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item ms-2 me-5" id="cart">
+                        <a class="nav-link" href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="currentColor" class="bi bi-basket3" viewBox="0 0 16 16">
+                                <path d="M5.757 1.071a.5.5 0 0 1 .172.686L3.383 6h9.234L10.07 1.757a.5.5 0 1 1 .858-.514L13.783 6H15.5a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H.5a.5.5 0 0 1-.5-.5v-1A.5.5 0 0 1 .5 6h1.717L5.07 1.243a.5.5 0 0 1 .686-.172zM3.394 15l-1.48-6h-.97l1.525 6.426a.75.75 0 0 0 .729.574h9.606a.75.75 0 0 0 .73-.574L15.056 9h-.972l-1.479 6h-9.21z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+<!-- Home Section-->
+<section id="About">
+  <div class="row py-5">
+    <div class="col-md-6 " >
+    <div id="aboutpart1">It's the food and groceries you love, delivered</div><br>
+    <div class="location shadow p-3 mb-5 bg-body-white ">
+        <div class="form-floating d-flex">
+            <textarea class="form-control d-flex " placeholder="Leave a comment here" style="height: 30px; width:90%"></textarea>
+            <label for="floatingTextarea2">Enter your full address &nbsp;<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-crosshair2" viewBox="0 0 16 16">
+                <path d="M8 0a.5.5 0 0 1 .5.5v.518A7.001 7.001 0 0 1 14.982 7.5h.518a.5.5 0 0 1 0 1h-.518A7.001 7.001 0 0 1 8.5 14.982v.518a.5.5 0 0 1-1 0v-.518A7.001 7.001 0 0 1 1.018 8.5H.5a.5.5 0 0 1 0-1h.518A7.001 7.001 0 0 1 7.5 1.018V.5A.5.5 0 0 1 8 0Zm-.5 2.02A6.001 6.001 0 0 0 2.02 7.5h1.005A5.002 5.002 0 0 1 7.5 3.025V2.02Zm1 1.005A5.002 5.002 0 0 1 12.975 7.5h1.005A6.001 6.001 0 0 0 8.5 2.02v1.005ZM12.975 8.5A5.002 5.002 0 0 1 8.5 12.975v1.005a6.002 6.002 0 0 0 5.48-5.48h-1.005ZM7.5 12.975A5.002 5.002 0 0 1 3.025 8.5H2.02a6.001 6.001 0 0 0 5.48 5.48v-1.005ZM10 8a2 2 0 1 0-4 0 2 2 0 0 0 4 0Z"/>
+              </svg></label>
+            <button class="find">Find Food</button>
+          </div>
+    </div>
+  </div>
+      <div class="col-md-6" id="picture">
+        <img width="150%" height="150%" src="./Images/refresh-hero-home-pk.webp" alt="hero">
+      </div>
+  </div>
+</section>
+
+<!-- Resturant-Home Section -->
+<div class="pt-5 ms-5 mb-2 fs-2">You prepare the food, we handle the rest</div>
+<div class="Resturant">
+    <img width="100%" class="img-fluid" src="./Images/cook.png" alt="">
+</div>
+<div class="card cards ms-5 mb-5 shadow p-3 mb-5 bg-body-white " style="width: 39rem;">
+    <div class="card-body">
+      <h5 class="card-title fs-3">List your restaurant or shop on foodpanda</h5>
+      <p class="card-text"> <br>
+        Would you like millions of new customers to enjoy your amazing food and groceries? So would we! <br><br>
+        
+        It's simple: we list your menu and product lists online, help you process orders, pick them up, and deliver them to hungry pandas – in a heartbeat! <br><br>
+        
+        Interested? Let's start our partnership today!</p>
+      <a href="#" class="btn btn-secondary">Get started</a>
+    </div>
+  </div>
+
+<!-- Cities Section -->
+<div class="ms-5 ps-4 mb-2 fs-2">Find us in these cities and many more!</div>
+<!-- 1st Row -->
+<div class="allCities container-fluid d-flex justify-content-center">
+    <div class="card mb-3 card-img" style="width: 18rem; border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Islamabad.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            <a href="#" class="btn btn-light fs-5">Islamabad</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem; height: 30%; border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Karachi.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Karachi</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3" style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Lahore.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Lahore</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3" style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Faisalabad.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Faislabad</a>
+          </div>
+    </div>
+</div>
+<!-- 2nd Row -->
+<div class="allCities container-fluid d-flex justify-content-center">
+    <div class="card mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Rawalpindi.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Rawalpindi</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-Abottabad.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Abottabad</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem; border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-Bahawalpur.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Bhawalpur</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Hyderabad.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Hyderabad</a>
+          </div>
+    </div>
+</div>
+<!-- 3rd Row -->
+<div class="allCities container-fluid d-flex justify-content-center">
+    <div class="card mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-Gujrat.jpg.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Gujrat</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-Jhelum.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Jhelum</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-WahhCannt.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">WahhCannt</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem; border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-Gujranwala.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Gujranwala</a>
+          </div>
+    </div>
+</div>
+<!-- 4th Row -->
+<div class="allCities container-fluid d-flex mx-5 ps-4">
+    <div class="card mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/foodpanda/city-tile-pk/Sialkot.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Sialkot</a>
+          </div>
+    </div>
+    <div class="card ms-3 mb-3 " style="width: 18rem;  border-radius: 20px;">
+        <img src="https://images.deliveryhero.io/image/fd-pk/city-tile/city-tile-Sargodha.jpg?width=720" class="card-img-top city" alt="...">    
+        <div class="card-img-overlay">
+            
+            <a href="#" class="btn btn-light fs-5">Sargodha</a>
+          </div>
+    </div>
+</div>
+
+<!-- Download Links -->
+<div class="fs-2 ms-5 px-4 pt-5">Put us in your pocket</div>
+<div class="mobile mb-5 container-fluid mt-3 d-flex">
+    <div class="col-md-6 ms-4 ">
+        <div class="fs-4 pt-5">Download the food and groceries you love</div> <br>
+       <div class="code d-flex pt-2">
+        <div class="qrcode">
+            <img width="80px" class="p-2" src="./Images/qrcode.png" alt="">
+           </div>
+           <div class="ps-4">
+            It's all at your fingertips – the restaurants and shops you love. 
+            Find the right food and groceries to suit your mood, and make the first bite last. Go ahead, download us.
+           </div>
+       </div>
+       <div class="downloadImages">
+        <img width="20%" src="./Images/appstore.png" alt="">
+        <img width="30%" src="./Images/googleplay.png" alt="">
+        <img width="22%" src="./Images/appgallary.png" alt="">
+       </div>
+    </div>
+    <div class="col-md-6 mobileImg">
+        <img width="100%" src="./Images/mobile_icon.webp" alt="">
+    </div>
+</div>
+
+<!-- Office Section -->
+<div class="fs-2 ms-5 px-4">Take your office out to lunch</div>
+<div class="mt-4">
+    <img width="100%" src="./Images/office.png" alt="">
+</div>
+<div class="card cards ms-5 mb-5 shadow p-3 mb-5 bg-body-white " style="width: 35rem;">
+    <div class="card-body">
+      <h5 class="card-title fs-3">foodpanda for business</h5>
+      <p class="card-text"> <br>
+        Order lunch or fuel for work-from-home, late nights in the office, <br> 
+        
+        corporate events, client meetings, and much more. </p>
+      <a href="#" class="btn btn-secondary">Get started</a>
+    </div>
+  </div>
+ 
+
+
+<!-- Details -->
+<div class="container">
+    <div class="heading   mt-5 pt-5 fs-2 fw-bold">
+        Order food and groceries online from the best restaurants and shops on foodpanda
+    </div>
+<div class=" mt-2 fs-5">
+    <small>Are you hungry? Did you have a long and stressful day? Interested in getting a cheesy pizza delivered to your office or looking to avoid the weekly shop? Then foodpanda Pakistan is the right destination for you! 
+    foodpanda offers you a long and detailed list of the best restaurants and shops near you to help make your every day easier.</small>
+</div>
+<div class="heading mt-4 fs-2 fw-bold">
+    What's new?
+</div>
+<div class="mt-3">
+    <ul class="list-group">
+        <li class="fs-5" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+          </svg><small>Wide variety of restaurants and shops, an abundance of cuisines & products.</small></li>
+          <li class="fs-5" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+          </svg><small>High quality delivery service.</small></li>
+          <li class="fs-5" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+          </svg><small>Live chat feature to give App users instant help when they need it.</small></li>
+          <li class="fs-5" ><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-check2" viewBox="0 0 16 16">
+            <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+          </svg><small>NEW: foodpanda grocery delivery! Discover the best shops, pharmacies, bakeries and more near you.</small></li>
+    </ul>
+    <hr>
+</div>
+<div class="heading fs-4 fw-bold">
+    Frequently Asked Questions
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    How can I get foodpanda delivery?
+</div>
+<div class=" mt-2 fs-5">
+    <small>To get foodpanda delivery, simply locate the restaurants and shops near you by typing in your address, browse through a variety of restaurants and cuisines, check menus and prices, choose your dishes and add them to the basket.
+         Now you only need to checkout and make the payment. Soon your delicious food will arrive at your doorstep!</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    Which takeout restaurants open now near me?
+</div>
+<div class=" mt-2 fs-5">
+    <small>You can check which takeout restaurants are open now near you by simply typing your address in the location bar on foodpanda and pressing search. 
+        You will see all the available restaurants and shops that deliver to your area.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    Does foodpanda deliver 24 hours?
+</div>
+<div class=" mt-2 fs-5">
+    <small>Yes, foodpanda in Pakistan delivers 24 hours. However, many restaurants may be unavailable for a late-night delivery. Please check which places in Pakistan deliver to you within 24 hours by using your address.
+         You can also order groceries 24 hours a day via pandamart.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    Can you pay cash for foodpanda?
+</div>
+<div class=" mt-2 fs-5">
+    <small>Yes, you can pay cash on delivery for foodpanda in Pakistan.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    How can I pay foodpanda online?
+</div>
+<div class=" mt-2 fs-5">
+    <small>You can pay online while ordering at foodpanda Pakistan by using a credit or debit card or PayPal.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    Can I order foodpanda for someone else?
+</div>
+<div class=" mt-2 fs-5">
+    <small>Yes, foodpanda Pakistan allows you to place an order for someone else. During checkout, just update the name and delivery address of the person you're ordering for. 
+        Please keep in mind that if the delivery details are not correct and the order cannot be delivered, we won't be able to process a refund.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    How much does foodpanda charge for delivery?
+</div>
+<div class=" mt-2 fs-5">
+    <small>Delivery fee charged by foodpanda in Pakistan depends on many operational factors, most of all - location and the restaurant you are ordering from. You can always check the delivery fee while forming your order. 
+        Besides, you can filter the restaurants by clicking on the "Free Delivery" icon at the top of your restaurant listing.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    What restaurants let you order online?
+</div>
+<div class=" mt-2 fs-5">
+    <small>There are hundreds of restaurants on foodpanda Pakistan that let you order online. For example, <span>KFC, McDonald's, Pizza Hut, OPTP, Hardee's, Domino's, Kababjees</span> and many-many more! In order to check all the restaurants near you that deliver, just type in your address and discover all the available places.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    Does foodpanda have minimum order?
+</div>
+<div class=" mt-2 fs-5">
+    <small>Yes, many restaurants have a minimum order. 
+        The minimum order value depends on the restaurant you order from and is indicated during your ordering process.</small>
+</div>
+<div class=" mt-3 fs-5 fw-bold">
+    What is the difference between delivery and Pick-Up?
+</div>
+<div class=" mt-2 fs-5">
+    <small>If you choose delivery, a foodpanda rider will collect your order from the restaurant and take it to your chosen delivery address. If you choose Pick-Up, you can takeaway your food directly from the restaurant for extra savings – and to jump to the front of the queue.
+         Pick-Up orders are available for restaurants only.</small>
+</div>
+<div class=" mt-3 fs-5 mb-5 fw-bold">
+    Order food and groceries online with foodpanda now and enjoy a great dining experience!
+</div>
+<div class="py-4"></div>
+
+<!-- footer -->
+
+<hr>
+<div class="p-4 d-flex justify-content-between">
+    <img  width="20%"  src="./Images/icon.png" alt="">
+    <div>
+        <abbr title="foodpanda on facebook" class="fb"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 512 512">
+            <style>svg{fill:#e21b70}</style>
+            <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+        </svg></abbr>
+        <abbr title="foodpanda on instagram"><svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 448 512">
+            <style>svg{fill:#cccccc}</style>
+            <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+            </svg></abbr>
+    </div>
+</div>
+<hr>
+</div>
+
+<!-- Footer -->
+<div class="footer container d-flex justify-content-between">
+    <div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-c-circle" viewBox="0 0 16 16">
+        <path d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8Zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0ZM8.146 4.992c-1.212 0-1.927.92-1.927 2.502v1.06c0 1.571.703 2.462 1.927 2.462.979 0 1.641-.586 1.729-1.418h1.295v.093c-.1 1.448-1.354 2.467-3.03 2.467-2.091 0-3.269-1.336-3.269-3.603V7.482c0-2.261 1.201-3.638 3.27-3.638 1.681 0 2.935 1.054 3.029 2.572v.088H9.875c-.088-.879-.768-1.512-1.729-1.512Z"/>
+      </svg>&nbsp;2023 foodpanda </div>
+    <div>
+        <ul class="list-group">
+           <li class="list"> Press</li>
+           <li class="list">Help Center </li>
+           <li class="list"> Refunds with pandapay </li>
+           <li class="list"> Pandapay User Account Terms </li>
+           <li class="list"> Terms and conditions </li>
+           <li class="list"> Privacy policy</li>
+           <li class="list"> Security </li>
+           <li class="list"> Download foodpanda Apps</li>
+        </ul>      
+    </div>
+    <div>
+        <ul class="list-group">
+           <li class="list"> Careers </li>
+           <li class="list"> Suggest a restaurant Corporate Customer </li>
+           <li class="list"> Cashback Terms and Conditions </li>
+           <li class="list"> All cuisines</li>
+           <li class="list"> foodpanda Magazine  </li>
+           <li class="list">  Partner with us </li>
+           <li class="list"> pandago - Request a rider  </li>
+           <li class="list">foodpanda Vouchers&Promo  </li>
+        </ul>    
+    </div>
+    <div>
+        <ul class="list-group">
+           <li class="list">  All cities</li>
+           <li class="list"> Update on COVID-19 in Pakistan</li>
+           <li class="list"> pandamart Grocery Delivery </li>
+           <li class="list">pandapro - monthly subscription</li>
+           <li class="list"> programme  </li>
+           <li class="list">   foodpanda home chef</li>
+           <li class="list"> Become an affiliate  </li>
+           <li class="list">  Ramzan deals</li>
+        </ul>      
+    </div>     
+</div>
+<div class="container footer countries mb-5">
+    <hr>
+   
+<ul class="d-flex font mt-4 pt-3">
+    <li class="country">Laos  &nbsp;</li>|
+    <li class="country ms-2">Cambodia &nbsp;</li>|
+    <li class="country ms-2">  Myanmar  &nbsp;</li>|
+    <li class="country ms-2"> Thailand  &nbsp;</li>|
+    <li class="country ms-2">  Hong Kong   &nbsp;</li>|
+    <li class="country ms-2">Taiwan &nbsp;</li>|
+    <li class="country ms-2">   Malaysia    &nbsp;</li>|
+    <li class="country ms-2"> Philippines   &nbsp;</li>|
+    <li class="country ms-2">  Singapore   &nbsp;</li>|
+    <li class="country ms-2">    Bangladesh   &nbsp;</li>
+</ul>
+    </p>
+</div>
+
+
+
+
+
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+</body>
+</html>
